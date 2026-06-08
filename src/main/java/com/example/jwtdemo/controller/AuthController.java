@@ -5,7 +5,6 @@ import com.example.jwtdemo.model.AuthResponse;
 import com.example.jwtdemo.model.User;
 import com.example.jwtdemo.service.JwtService;
 import com.example.jwtdemo.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +30,7 @@ public class AuthController {
         this.authenticationManager = authenticationManager;
     }
 
+    // @Operation annotation: For description in the swagger-ui interface.
     @PostMapping("/signup")
     @Operation(summary = "Register a new user")
     public String signup(@RequestBody User user){

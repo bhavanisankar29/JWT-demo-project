@@ -19,6 +19,7 @@ public class SecurityConfig {
                                            JwtFilter jwtFilter) throws Exception {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
+                        // Enable all routes that start with auth(signup, login) and for swagger.
                         .requestMatchers("/auth/**",
                                 "/swagger-ui/**",
                                 "/swagger-ui.html",
